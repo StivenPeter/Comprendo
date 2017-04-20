@@ -12,3 +12,7 @@ def isminThresh(s):
     return True 
   return False 
   
+def minrating(s):
+  if isminThresh(s) == False:
+    return 1
+  res = lengthofs(s) 
