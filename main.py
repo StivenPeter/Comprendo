@@ -4,7 +4,7 @@ def lengthofs(s):
   l = len([letter for letter in s if letter.islower()])
   n = len([letter for letter in s if letter.isdigit()])
   aln = len([letter for letter in s if letter.isalnum()])
-  return [u,l,n,an]
+  return [u,l,n,aln]
 
 def isminThresh(s):
   res = lengthofs(s)
@@ -15,4 +15,19 @@ def isminThresh(s):
 def minrating(s):
   if isminThresh(s) == False:
     return 1
-  res = lengthofs(s) 
+  ret = 1
+  res = lengthofs(s)
+  if res[0]>3:
+    ret+=3
+  else:
+    ret+=res[0]
+  if res[1]>3:
+    ret+=3
+  else:
+    ret+=res[1]
+  if res[2]>3:
+    ret+=3
+  else:
+    ret+=res[2]
+  return ret
+#print "password strength"+"(GOOdni647): "+str(minrating("GOOdni647"))
